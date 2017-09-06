@@ -1,4 +1,7 @@
 require "net/http"
+require "json"
+require "base64"
+require "openssl"
 
 class IdTokenValidator
   GOOGLE_SIGNON_CERTS_URL    = "https://www.googleapis.com/oauth2/v1/certs".freeze
