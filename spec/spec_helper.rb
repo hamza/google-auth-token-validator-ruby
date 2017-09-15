@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "googleauth-token_validator"
+require "googleauth/token_validator"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
