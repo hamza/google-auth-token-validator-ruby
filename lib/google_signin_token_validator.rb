@@ -3,7 +3,9 @@ require "json"
 require "base64"
 require "openssl"
 
-class IdTokenValidator
+require "google_signin_token_validator/version"
+
+module GoogleSigninTokenValidator
   GOOGLE_SIGNON_CERTS_URL    = "https://www.googleapis.com/oauth2/v1/certs".freeze
   ISSUERS                    = %w(accounts.google.com https://accounts.google.com).freeze
   CLOCK_SKEW_SECONDS         = 300 # five minutes
