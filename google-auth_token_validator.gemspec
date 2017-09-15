@@ -1,11 +1,12 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "google_signin_token_validator/version"
+
+require "googleauth/token_validator/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "google_signin_token_validator"
-  spec.version       = GoogleSigninTokenValidator::VERSION
+  spec.name          = "google-auth_token_validator"
+  spec.version       = Google::Auth::TokenValidator::VERSION
   spec.date          = Time.now.strftime('%Y-%m-%d')
   spec.authors       = ["Hamza Tayeb"]
   spec.email         = ["hamza.tayeb@gmail.com"]

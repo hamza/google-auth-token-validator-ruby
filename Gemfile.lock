@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    google_signin_token_validator (0.1.0)
+    google-auth_token_validator (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -34,10 +34,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.15)
-  google_signin_token_validator!
+  google-auth_token_validator!
   pry
   rake (~> 10.0)
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.15.1
+   1.16.0.pre.2

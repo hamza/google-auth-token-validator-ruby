@@ -1,4 +1,4 @@
-# GoogleSigninTokenValidator
+# Google Sign-in Token Validator
 
 The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in.
 A necessary step for a service provider to trust such a token involves validating the token,
@@ -24,7 +24,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install google_signin_token_validator
+    $ gem install google-auth_token_validator
 
 ## Usage
 

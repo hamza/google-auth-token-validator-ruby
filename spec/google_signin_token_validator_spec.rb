@@ -1,8 +1,8 @@
 require "spec_helper"
 
-RSpec.describe GoogleSigninTokenValidator do
+RSpec.describe Google::Auth::TokenValidator do
   it "has a version number" do
-    expect(GoogleSigninTokenValidator::VERSION).not_to be nil
+    expect(Google::Auth::TokenValidator::VERSION).not_to be nil
   end
 
   it "does something useful" do
