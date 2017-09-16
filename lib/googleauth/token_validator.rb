@@ -26,11 +26,11 @@ class Google::Auth::TokenValidator
   end
 
   def validate max_expiry = MAX_TOKEN_LIFETIME_SECONDS
-    unless [@signed, @signature, @envelope, @payload].all? &:present?
+    unless [@signed, @signature, @envelope, @payload].all?
       fail Error, "Validator was not properly initialized"
     end
 
-    unless @envelope["kid"].in? self.class._certs.keys
+    unless self.class._certs.keys.include? @envelope["kid"]
       fail Error, "No matching Google cert found for envelope: #{@envelope}"
     end
 
@@ -42,8 +42,8 @@ class Google::Auth::TokenValidator
 
     fail Error, "Token signature invalid" unless verified
 
-    fail Error, "No issue time in token" if @payload["iat"].blank?
-    fail Error, "No expiration time in token" if @payload["exp"].blank?
+    fail Error, "No issue time in token" if @payload["iat"].to_s.empty?
+    fail Error, "No expiration time in token" if @payload["exp"].to_s.empty?
 
     now      = Time.now.to_i
     earliest = @payload["iat"] - CLOCK_SKEW_SECONDS
@@ -53,16 +53,20 @@ class Google::Auth::TokenValidator
     fail Error, "Token used too early" if now < earliest
     fail Error, "Token used too late" if now > latest
 
-    unless @payload["iss"].in? ISSUERS
+    unless ISSUERS.include? @payload["iss"]
       fail Error, "Invalid issuer. Expected one of #{ISSUERS}, but got #{@payload["iss"]}"
     end
 
-    fail Error, "Invalid client id(s)" unless @client_id.class.in? [Array, String]
-    aud_verified = @payload["aud"].send({ Array => :in?, String => :eql? }[@client_id.class], @client_id)
+    if @client_id.is_a? Array
+      aud_verified = @client_id.include?(@payload["aud"])
+    elsif @client_id.is_a? String
+      aud_verified = @payload["aud"] == @client_id
+    else
+      fail Error, "Invalid client id(s)"
+    end
 
     fail Error, "Wrong recipient - payload aud doesn't match required aud" unless aud_verified
 
-    # if we made it this far without blowing up, token is valid
     return true
   end
 
