@@ -1,4 +1,4 @@
-# Google Sign-in Token Validator
+# Google Auth Token Validator
 
 The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in.
 A necessary step for a service provider to trust such a token involves validating the token,
@@ -15,7 +15,7 @@ but a Ruby implementation is missing. This gem fills that gap.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'google_signin_token_validator'
+gem 'google-auth_token_validator' # doesn't work yet! stay tuned …
 ```
 
 And then execute:
