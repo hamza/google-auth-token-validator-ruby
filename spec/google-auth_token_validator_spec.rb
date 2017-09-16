@@ -10,7 +10,6 @@ RSpec.describe Google::Auth::TokenValidator do
 
   it "validates a token" do
     validator = Google::Auth::TokenValidator.new data[:id_token][:good], data[:client_id][:good]
-    binding.pry
     expect(validator.validate).to eq(true)
   end
 end
