@@ -1,7 +1,10 @@
 require "bundler/setup"
+require "coveralls"
 require "yaml"
 require "json"
 require "googleauth/token_validator"
+
+Coveralls.wear!
 
 RSpec.shared_context "test data", :shared_context => :metadata do
   yaml = YAML.load_file File.join(__dir__, "data.yml")
