@@ -4,6 +4,11 @@ require "yaml"
 require "json"
 require "googleauth/token_validator"
 
+unless ENV["TRAVIS"]
+  require "dotenv"
+  Dotenv.load File.join(__dir__, "..", ".env")
+end
+
 Coveralls.wear!
 
 RSpec.shared_context "test data", :shared_context => :metadata do
