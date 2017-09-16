@@ -1,5 +1,7 @@
 # Google Auth Token Validator
 
+[![Build Status](https://travis-ci.org/hamza/google-auth-token-validator-ruby.svg?branch=master)](https://travis-ci.org/hamza/google-auth-token-validator-ruby)
+
 The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in.
 A necessary step for a service provider to trust such a token involves validating the token,
 rather than simply trusting the token, which would allow a malicious client to simply assert
