@@ -1,0 +1,8 @@
+client_id:
+  good: foobar
+  bad: foobar
+
+refresh_token: foobar
+
+id_token:
+  good: foobar
