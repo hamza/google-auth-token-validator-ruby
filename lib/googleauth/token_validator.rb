@@ -12,7 +12,7 @@ class Google::Auth::TokenValidator
   attr_reader :signed, :signature, :envelope, :payload, :client_id
 
   def initialize jwt, client_id
-    segments = jwt.split "."
+    segments = jwt.split(".")
 
     fail Error, "Wrong number of segments in token: #{jwt}" unless segments.size.eql? 3
 
