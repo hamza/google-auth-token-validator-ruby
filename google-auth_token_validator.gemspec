@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
     rather than simply trusting the token, which would allow a malicious client to simply assert
     itself.
 
-    Google provides libraries for this function in several languages (https://goo.gl/jkzS18) to
-    serve this function, as well as an API endpoint that can outsource the task to Google's own
-    servers (thereby introducing an additional network round trip into every authentication step),
-    but a Ruby implementation is missing. This gem fills that gap.
+    Google provides libraries in several languages (https://goo.gl/jkzS18) to serve this function,
+    as well as an API endpoint that can outsource the task to Google's own servers (thereby
+    introducing an additional network round trip into every authentication step), but a Ruby
+    implementation is missing. This gem fills that gap.
   DESC
 
   spec.homepage      = "https://github.com/hamza/google-signin-token-validator"
