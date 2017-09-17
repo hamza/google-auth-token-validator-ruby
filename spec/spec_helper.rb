@@ -11,9 +11,9 @@ unless ENV["TRAVIS"]
   Dotenv.load File.join(__dir__, "..", ".env")
 end
 
-RSpec.shared_context "test data", :shared_context => :metadata do
-  yaml = YAML.load_file File.join(__dir__, "data.yml")
-  let(:data) { JSON.parse(yaml.to_json, symbolize_names: true) }
+RSpec.shared_context "test tokens", :shared_context => :metadata do
+  yaml = YAML.load_file File.join(__dir__, "test_tokens.yml")
+  let(:tokens) { JSON.parse(yaml.to_json, symbolize_names: true) }
 end
 
 RSpec.configure do |config|
@@ -27,5 +27,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  config.include_context "test data", :include_shared => true
+  config.include_context "test tokens", :include_shared => true
 end

@@ -65,7 +65,9 @@ class Google::Auth::TokenValidator
       fail Error, "Invalid client id(s)"
     end
 
-    fail Error, "Wrong recipient - payload aud doesn't match required aud" unless aud_verified
+    unless aud_verified
+      fail Error, "Wrong recipient - payload audience doesn't match required audience"
+    end
 
     return true
   end
