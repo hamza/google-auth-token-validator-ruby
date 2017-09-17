@@ -12,7 +12,7 @@ Google provides libraries in several languages (https://goo.gl/jkzS18) to serve 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'google-auth-token_validator' # doesn't work yet! stay tuned …
+gem 'google-auth-token_validator'
 ```
 
 And then execute:
