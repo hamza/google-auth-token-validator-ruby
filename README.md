@@ -18,7 +18,7 @@ but a Ruby implementation is missing. This gem fills that gap.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'google-auth_token_validator' # doesn't work yet! stay tuned …
+gem 'google-auth-token_validator' # doesn't work yet! stay tuned …
 ```
 
 And then execute:
@@ -27,21 +27,47 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install google-auth_token_validator
+    $ gem install google-auth-token_validator
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "googleauth/token_validator"
+
+client_id = "<your client ID>"
+id_token = "<user's ID token>"
+
+begin
+  valid = Google::Auth::TokenValidator.new(id_token, client_id).validate
+rescue Google::Auth::TokenValidator::Error => e
+  puts e.message
+  valid = false
+end
+
+if valid
+  # trust this token
+end
+```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+This gem uses [`dotenv`](https://github.com/bkeepers/dotenv) to set up the test environment. To enable local testing, you'll need to set up the following -
+
+|Key|Description|
+|---|---|
+|`TEST_CLIENT_ID`|A Google OAuth client ID, used to compare ID tokens against|
+|`TEST_CLIENT_SECRET`|A Google OAuth client secret, used to authorize token refreshes|
+|`REFRESH_TOKEN`|A refresh token for a test user. It is recommended to use the [Google OAuth Playground](https://developers.google.com/oauthplayground/) to generate one|
+
+**NOTE**: it is not recommended to use your real account for this. Instead use a test user.
+
+Use the [Google Cloud Console](https://console.cloud.google.com) to set up an OAuth id/secret pair for use with testing.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hamza/google_signin_token_validator
+Bug reports and pull requests are welcome on [the repo](https://github.com/hamza/google_signin_token_validator).
 
 ## License
 

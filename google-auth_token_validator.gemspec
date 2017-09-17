@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "googleauth/token_validator/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "google-auth_token_validator"
+  spec.name          = "google-auth-token_validator"
   spec.version       = Google::Auth::TokenValidator::VERSION
   spec.date          = Time.now.strftime('%Y-%m-%d')
   spec.authors       = ["Hamza Tayeb"]
