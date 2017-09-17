@@ -61,7 +61,7 @@ Use the [Google Cloud Console](https://console.cloud.google.com) to set up an OA
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [the repo](https://github.com/hamza/google_signin_token_validator).
+Bug reports and pull requests are welcome on [the repo](https://github.com/hamza/google-auth-token-validator-ruby/issues).
 
 ## License
 
