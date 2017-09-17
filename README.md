@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/hamza/google-auth-token-validator-ruby.svg?branch=master)](https://travis-ci.org/hamza/google-auth-token-validator-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/hamza/google-auth-token-validator-ruby/badge.svg?branch=master)](https://coveralls.io/github/hamza/google-auth-token-validator-ruby?branch=master)
 
-The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in. A necessary step for a service provider to trust such a token involves validating the token, rather than simply trusting the token, which would allow a malicious client to simply assert itself.
+The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in. A necessary step for a service provider to trust such a token is validatation. Accepting the token without validation would allow a malicious client to simply assert itself in your system.
 
-Google provides libraries in several languages (https://goo.gl/jkzS18) to serve this function, as well as an API endpoint that can outsource the task to Google's own servers (thereby introducing an additional network round trip into every authentication step), but a Ruby implementation is missing. This gem fills that gap.
+Google provides [libraries in several languages](https://developers.google.com/identity/sign-in/web/backend-auth) to accomplish this, as well as an API endpoint that can outsource the task to Google's own servers (thereby introducing an additional network round trip into every authentication step), but a Ruby implementation is missing. This gem fills that gap.
 
 ## Installation
 
