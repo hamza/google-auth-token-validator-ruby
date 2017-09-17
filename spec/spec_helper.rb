@@ -1,5 +1,7 @@
-require "bundler/setup"
 require "coveralls"
+Coveralls.wear!
+
+require "bundler/setup"
 require "yaml"
 require "json"
 require "googleauth/token_validator"
@@ -8,8 +10,6 @@ unless ENV["TRAVIS"]
   require "dotenv"
   Dotenv.load File.join(__dir__, "..", ".env")
 end
-
-Coveralls.wear!
 
 RSpec.shared_context "test data", :shared_context => :metadata do
   yaml = YAML.load_file File.join(__dir__, "data.yml")
