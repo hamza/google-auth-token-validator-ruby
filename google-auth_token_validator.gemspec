@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
     The Google Sign-In API gives OAuth2 JSON Web Tokens (JWT) as response data upon user sign-in.
     A necessary step for a service provider to trust such a token is validatation. Accepting the
     token without validation would allow a malicious client to simply assert itself in your system.
-    \n\n
 
     Google provides libraries in several languages (https://goo.gl/jkzS18) to accomplish this,
     as well as an API endpoint that can outsource the task to Google's own servers (thereby
